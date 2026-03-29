@@ -8,10 +8,10 @@ body {
 }
 
 h1,
-h2, 
-h3, 
+h2,
+h3,
 h4,
-h5, 
+h5,
 h6 {
     color: #414141;
 }
@@ -57,6 +57,20 @@ a:focus {
     color: #EF233C;
     background: transparent;
     box-shadow: inset 0 0 0 0 #EF233C;
+    border-color: #EF233C;
+}
+
+.btn-ghost {
+    color: #EF233C;
+    background: transparent;
+    border: 2px solid #EF233C;
+    box-shadow: none;
+}
+
+.btn-ghost:hover {
+    color: #ffffff;
+    background: #EF233C;
+    box-shadow: inset 0 0 0 50px #EF233C;
     border-color: #EF233C;
 }
 
@@ -148,12 +162,11 @@ a:focus {
 
 .navbar .navbar-brand {
     margin: 0;
-    font-size: 45px;
+    font-size: 24px;
     line-height: 0px;
     font-weight: 700;
     letter-spacing: 2px;
     transition: .5s;
-    
 }
 
 .navbar .navbar-brand img {
@@ -177,16 +190,16 @@ a:focus {
         border-bottom: 1px dashed rgba(256, 256, 256, .2);
         z-index: 9;
     }
-    
+
     .navbar.nav-sticky {
         padding: 10px 60px;
         background: #ffffff !important;
     }
-    
+
     .navbar .navbar-brand {
         color: #ffffff;
     }
-    
+
     .navbar.nav-sticky .navbar-brand {
         color: #EF233C;
     }
@@ -198,7 +211,7 @@ a:focus {
         font-size: 15px;
         font-weight: 500;
     }
-    
+
     .navbar-light.nav-sticky .navbar-nav .nav-link,
     .navbar-light.nav-sticky .navbar-nav .nav-link:focus {
         color: #414141;
@@ -208,31 +221,31 @@ a:focus {
     .navbar-light .navbar-nav .nav-link.active {
         color: #111111;
     }
-    
+
     .navbar-light.nav-sticky .navbar-nav .nav-link:hover,
     .navbar-light.nav-sticky .navbar-nav .nav-link.active {
         color: #EF233C;
     }
 }
 
-@media (max-width: 991.98px) {   
+@media (max-width: 991.98px) {
     .navbar {
         padding: 15px;
         background: #ffffff !important;
     }
-    
+
     .navbar .navbar-brand {
         color: #EF233C;
     }
-    
+
     .navbar .navbar-nav {
         margin-top: 15px;
     }
-    
+
     .navbar a.nav-link {
         padding: 5px;
     }
-    
+
     .navbar .dropdown-menu {
         box-shadow: none;
     }
@@ -312,6 +325,15 @@ a:focus {
     color: #ffffff;
 }
 
+.hero .hero-text .hero-subtitle {
+    font-size: 22px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 20px;
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
 .hero .hero-btn .btn {
     margin-top: 35px;
     color: #EF233C;
@@ -334,24 +356,28 @@ a:focus {
     .hero {
         padding-top: 60px;
     }
-    
+
     .hero .hero-content {
         padding: 0 15px;
     }
-    
+
     .hero .hero-text p {
         font-size: 20px;
     }
-    
+
     .hero .hero-text h1 {
         font-size: 45px;
     }
-    
+
     .hero .hero-text h2 {
         font-size: 25px;
         height: 25px;
     }
-    
+
+    .hero .hero-text .hero-subtitle {
+        font-size: 16px;
+    }
+
     .hero .hero-btn .btn {
         padding: 12px 30px;
         letter-spacing: 1px;
@@ -363,27 +389,31 @@ a:focus {
         padding-top: 60px;
         padding-bottom: 60px;
     }
-    
+
     .hero,
     .hero .hero-text,
     .hero .hero-btn {
         width: 100%;
         text-align: center;
     }
-    
+
     .hero .hero-text p {
         font-size: 18px;
     }
-    
+
     .hero .hero-text h1 {
         font-size: 35px;
     }
-    
+
     .hero .hero-text h2 {
         font-size: 22px;
         height: 22px;
     }
-    
+
+    .hero .hero-text .hero-subtitle {
+        font-size: 15px;
+    }
+
     .hero .hero-btn .btn {
         padding: 10px 15px;
         letter-spacing: 1px;
@@ -394,16 +424,20 @@ a:focus {
     .hero .hero-text p {
         font-size: 16px;
     }
-    
+
     .hero .hero-text h1 {
         font-size: 30px;
     }
-    
+
     .hero .hero-text h2 {
         font-size: 18px;
         height: 18px;
     }
-    
+
+    .hero .hero-text .hero-subtitle {
+        font-size: 13px;
+    }
+
     .hero .hero-btn .btn {
         padding: 8px 10px;
         letter-spacing: 0;
@@ -685,27 +719,27 @@ a:focus {
         width: 100%;
         padding-left: 38px;
     }
-    
+
     .experience .timeline .timeline-item.left {
         padding-right: 0;
     }
-    
+
     .experience .timeline .timeline-item.right {
         left: 0%;
         padding-left: 38px;
     }
 
-    .experience .timeline .timeline-item.left::after, 
+    .experience .timeline .timeline-item.left::after,
     .experience .timeline .timeline-item.right::after {
         left: 0;
     }
-    
+
     .experience .timeline .timeline-item.left::before,
     .experience .timeline .timeline-item.right::before {
         left: 18px;
         border-color: transparent #dddddd transparent transparent;
     }
-    
+
     .experience .timeline .timeline-item.left .timeline-date,
     .experience .timeline .timeline-item.right .timeline-date {
         position: relative;
@@ -715,7 +749,7 @@ a:focus {
         text-align: left;
         margin-bottom: 10px;
     }
-    
+
     .experience .timeline .timeline-item.left .timeline-text,
     .experience .timeline .timeline-item.right .timeline-text {
         border-right: none;
@@ -797,7 +831,7 @@ a:focus {
         font-size: 16px;
         margin-bottom: 5px;
     }
-    
+
     .service .service-text p {
         font-size: 14px;
     }
@@ -810,6 +844,7 @@ a:focus {
 .portfolio {
     position: relative;
     padding: 45px 0 15px 0;
+    overflow: hidden;
 }
 
 .portfolio #portfolio-filter {
@@ -861,8 +896,8 @@ a:focus {
 
 .portfolio .portfolio-img img {
     position: relative;
-    width: 100%; 
-    height: 100%; 
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     transform: scale(1.1);
     transition: .5s;
@@ -920,6 +955,7 @@ a:focus {
     margin: 45px 0;
     padding: 90px 0;
     background: #EF233C;
+    clear: both;
 }
 
 .banner .container {
@@ -983,17 +1019,18 @@ a:focus {
 }
 
 .price .col-md-4 {
-    padding: 0;
+    padding: 0 15px;
 }
 
 .price .price-item {
     position: relative;
     margin-bottom: 30px;
     background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, .05);
 }
 
 .price .featured-item {
-    box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .1);
     z-index: 1;
 }
 
@@ -1005,7 +1042,7 @@ a:focus {
 }
 
 .price .price-header {
-    padding: 45px 0 30px 0;
+    padding: 30px 15px 20px 15px;
     color: #414141;
 }
 
@@ -1014,7 +1051,7 @@ a:focus {
 }
 
 .price .price-title h2 {
-    font-size: 25px;
+    font-size: 22px;
     font-weight: 400;
     text-transform: uppercase;
 }
@@ -1023,6 +1060,13 @@ a:focus {
     font-size: 45px;
     font-weight: 700;
     margin-left: 10px;
+}
+
+.price .price-prices h3 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+    padding: 0 10px;
 }
 
 .price .price-prices h2 small {
@@ -1044,7 +1088,12 @@ a:focus {
 }
 
 .price .price-body {
-    padding: 0 0 20px 0;
+    padding: 0 15px 20px 15px;
+}
+
+.price .price-description p {
+    font-size: 14px;
+    line-height: 1.6;
 }
 
 .price .price-description ul {
@@ -1058,7 +1107,7 @@ a:focus {
 }
 
 .price .price-item .price-action {
-    padding-bottom: 45px;
+    padding-bottom: 30px;
 }
 
 .price .price-item .price-action .btn {
@@ -1191,7 +1240,7 @@ a:focus {
     .team .team-text {
         padding: 0 15px;
     }
-    
+
     .team .team-text h2 {
         font-size: 16px;
         margin-bottom: 0;
@@ -1221,6 +1270,15 @@ a:focus {
 
 .testimonial .container {
     max-width: 900px;
+}
+
+.testimonial .section-header {
+    margin-bottom: 20px;
+}
+
+.testimonial .section-header p::before,
+.testimonial .section-header p::after {
+    background: #ffffff;
 }
 
 .testimonial .testimonial-icon {
@@ -1296,6 +1354,46 @@ a:focus {
 
 .testimonial .owl-dot.active {
     background: #ffffff;
+}
+
+.testimonial .owl-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    transform: translateY(-50%);
+    padding: 0 10px;
+}
+
+.testimonial .owl-nav button {
+    pointer-events: auto;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.3) !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+}
+
+.testimonial .owl-nav button:hover {
+    background: #ffffff !important;
+}
+
+.testimonial .owl-nav button span {
+    font-size: 0;
+}
+
+.testimonial .owl-nav button i {
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.testimonial .owl-nav button:hover i {
+    color: #EF233C;
 }
 
 
@@ -1376,86 +1474,10 @@ a:focus {
     .contact .container-fluid {
         background: none;
     }
-    
+
     .contact .contact-form {
         padding: 90px 0;
     }
-}
-
-
-/*******************************/
-/*********** Blog CSS **********/
-/*******************************/
-.blog {
-    position: relative;
-    width: 100%;
-    padding: 45px 0 15px 0;
-}
-
-.blog .blog-item {
-    position: relative;
-    margin-bottom: 30px;
-}
-
-.blog .blog-img {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
-.blog .blog-img img {
-    width: 100%;
-    transition: .5s;
-}
-
-.blog .blog-item:hover img {
-    transform: scale(1.1);
-}
-
-.blog .blog-text {
-    position: relative;
-    padding: 30px;
-    border-right: 1px solid rgba(0, 0, 0, .07);
-    border-bottom: 1px solid rgba(0, 0, 0, .07);
-    border-left: 1px solid rgba(0, 0, 0, .07);
-}
-
-.blog .blog-text h2 {
-    font-size: 25px;
-    font-weight: 600;
-}
-
-.blog .blog-text p {
-    margin-bottom: 10px;
-}
-
-.blog .blog-item a.btn {
-    margin-top: 10px;
-    padding: 8px 15px;
-}
-
-.blog .blog-item a.btn i {
-    margin-left: 5px;
-}
-
-.blog .blog-meta {
-    position: relative;
-    display: flex;
-    margin-bottom: 15px;
-}
-
-.blog .blog-meta p {
-    margin: 0 10px 0 0;
-    font-size: 13px;
-}
-
-.blog .blog-meta i {
-    color: #414141;
-    margin-right: 5px;
-}
-
-.blog .blog-meta p:last-child {
-    margin: 0;
 }
 
 
@@ -1587,56 +1609,5 @@ a:focus {
         font-size: 16px;
         line-height: 16px;
         padding: 0 5px;
-    }
-}
-
-
-/*******************************/
-/*** Hero Subtitle & Tagline ***/
-/*******************************/
-.hero .hero-text .hero-subtitle {
-    font-size: 18px;
-    font-weight: 400;
-    color: #ffffff;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    line-height: 1.6;
-}
-
-.hero .hero-text .hero-tagline {
-    font-size: 14px;
-    font-weight: 300;
-    color: rgba(255, 255, 255, 0.85);
-    margin-bottom: 0;
-    letter-spacing: 0.5px;
-}
-
-@media (max-width: 991.98px) {
-    .hero .hero-text .hero-subtitle {
-        font-size: 16px;
-    }
-
-    .hero .hero-text .hero-tagline {
-        font-size: 13px;
-    }
-}
-
-@media (max-width: 767.98px) {
-    .hero .hero-text .hero-subtitle {
-        font-size: 15px;
-    }
-
-    .hero .hero-text .hero-tagline {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 575.98px) {
-    .hero .hero-text .hero-subtitle {
-        font-size: 14px;
-    }
-
-    .hero .hero-text .hero-tagline {
-        font-size: 11px;
     }
 }
