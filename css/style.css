@@ -1589,3 +1589,54 @@ a:focus {
         padding: 0 5px;
     }
 }
+
+
+/*******************************/
+/*** Hero Subtitle & Tagline ***/
+/*******************************/
+.hero .hero-text .hero-subtitle {
+    font-size: 18px;
+    font-weight: 400;
+    color: #ffffff;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.hero .hero-text .hero-tagline {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 0;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 991.98px) {
+    .hero .hero-text .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .hero .hero-text .hero-tagline {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero .hero-text .hero-subtitle {
+        font-size: 15px;
+    }
+
+    .hero .hero-text .hero-tagline {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero .hero-text .hero-subtitle {
+        font-size: 14px;
+    }
+
+    .hero .hero-text .hero-tagline {
+        font-size: 11px;
+    }
+}
