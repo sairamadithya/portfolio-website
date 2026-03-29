@@ -1611,3 +1611,172 @@ a:focus {
         padding: 0 5px;
     }
 }
+
+
+/*******************************/
+/****** Tech Stack CSS *********/
+/*******************************/
+.tech-stack {
+    position: relative;
+    width: 100%;
+    padding: 45px 0;
+    background: #f8f9fa;
+}
+
+.tech-stack .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tech-stack .skill-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #414141;
+    transition: all 0.3s ease;
+}
+
+.tech-stack .skill-pill:hover {
+    background: #EF233C;
+    color: #ffffff;
+    border-color: #EF233C;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 35, 60, 0.3);
+}
+
+.tech-stack .skill-pill i {
+    margin-right: 6px;
+    font-size: 16px;
+    color: #EF233C;
+}
+
+.tech-stack .skill-pill:hover i {
+    color: #ffffff;
+}
+
+
+/*******************************/
+/***** Achievement Cards *******/
+/*******************************/
+.achievement-card {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+.achievement-card .achievement-img {
+    flex-shrink: 0;
+    width: 90px;
+    height: 90px;
+    margin-right: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.achievement-card .achievement-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.achievement-card .achievement-content h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #414141;
+}
+
+.achievement-card .achievement-content p {
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.5;
+    color: #797979;
+}
+
+@media (max-width: 575.98px) {
+    .achievement-card .achievement-img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .achievement-card .achievement-content h3 {
+        font-size: 15px;
+    }
+}
+
+
+/*******************************/
+/******** Gallery CSS **********/
+/*******************************/
+.gallery {
+    position: relative;
+    width: 100%;
+    padding: 45px 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+}
+
+@media (max-width: 992px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item .caption {
+    padding: 12px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    background: #ffffff;
+    color: #414141;
+}
