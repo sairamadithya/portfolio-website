@@ -1763,14 +1763,143 @@ a:focus {
     border-color: #ffffff;
 }
 
+/* Stats Counter */
+.stats-counter {
+    background: #ffffff;
+    padding: 40px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.stats-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 15px 30px;
+    min-width: 140px;
+}
+
+.stat-item .stat-number {
+    font-size: 38px;
+    font-weight: 700;
+    color: #EF233C;
+    line-height: 1.1;
+}
+
+.stat-item .stat-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #797979;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+}
+
+@media (max-width: 767.98px) {
+    .stat-item {
+        padding: 10px 15px;
+        min-width: 100px;
+    }
+    .stat-item .stat-number {
+        font-size: 28px;
+    }
+    .stat-item .stat-label {
+        font-size: 11px;
+    }
+}
+
+/* Social Proof Strip */
+.social-proof-strip {
+    padding: 30px 0;
+    background: #f8f9fa;
+}
+
+.proof-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.proof-thumbnails {
+    display: flex;
+    gap: 10px;
+}
+
+.proof-thumbnails img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.proof-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #414141;
+    margin: 0;
+}
+
+/* Positioning Statement */
+.positioning-statement {
+    padding: 40px 0;
+}
+
+.positioning-block {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px 40px;
+    background: rgba(239, 35, 60, 0.06);
+    border-left: 4px solid #EF233C;
+    border-radius: 0 8px 8px 0;
+}
+
+.positioning-block p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #414141;
+    margin: 0;
+    font-weight: 500;
+}
+
+@media (max-width: 575.98px) {
+    .positioning-block {
+        padding: 20px 25px;
+    }
+    .positioning-block p {
+        font-size: 15px;
+    }
+}
+
 /* Topic cards */
 .academia-topics {
     padding: 60px 0 30px;
 }
 
+.topic-column-header {
+    font-size: 20px;
+    font-weight: 700;
+    color: #EF233C;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(239, 35, 60, 0.2);
+}
+
+.topic-column-header i {
+    margin-right: 8px;
+}
+
 .topic-card {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     padding: 20px;
     margin-bottom: 20px;
     background: #ffffff;
@@ -1795,6 +1924,7 @@ a:focus {
     background: rgba(239, 35, 60, 0.1);
     border-radius: 10px;
     margin-right: 15px;
+    margin-top: 2px;
 }
 
 .topic-card .topic-icon i {
@@ -1805,7 +1935,7 @@ a:focus {
 .topic-card .topic-text h3 {
     font-size: 17px;
     font-weight: 700;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     color: #414141;
 }
 
@@ -1813,12 +1943,101 @@ a:focus {
     font-size: 14px;
     color: #797979;
     margin: 0;
+    line-height: 1.6;
+}
+
+.topic-card .topic-text p strong {
+    color: #414141;
 }
 
 /* Workshop experience */
 .workshop-experience {
     padding: 60px 0;
     background: #f8f9fa;
+}
+
+/* Workshop testimonial */
+.workshop-testimonial {
+    max-width: 700px;
+    margin: 40px auto 0;
+    text-align: center;
+}
+
+.workshop-testimonial blockquote {
+    position: relative;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    margin: 0;
+}
+
+.workshop-testimonial blockquote .fa-quote-left {
+    font-size: 24px;
+    color: #EF233C;
+    opacity: 0.4;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.workshop-testimonial blockquote p {
+    font-size: 16px;
+    font-style: italic;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.workshop-testimonial blockquote cite {
+    font-size: 14px;
+    font-weight: 600;
+    color: #EF233C;
+    font-style: normal;
+}
+
+/* Closing CTA */
+.closing-cta {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #2b2d42, #414141);
+}
+
+.closing-cta h2 {
+    color: #ffffff;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.closing-cta p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
+
+.closing-cta .btn {
+    color: #2b2d42;
+    background: #ffffff;
+    box-shadow: inset 0 0 0 50px #ffffff;
+    font-size: 16px;
+    padding: 14px 35px;
+}
+
+.closing-cta .btn:hover {
+    color: #ffffff;
+    background: transparent;
+    box-shadow: inset 0 0 0 0 #ffffff;
+    border-color: #ffffff;
+}
+
+@media (max-width: 767.98px) {
+    .closing-cta h2 {
+        font-size: 26px;
+    }
+    .closing-cta p {
+        font-size: 15px;
+    }
 }
 
 .workshop-list {
