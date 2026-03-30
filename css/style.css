@@ -181,21 +181,17 @@ a:focus {
     background: #f8f9fa;
 }
 
-/* Logo multi-color */
-.navbar-brand .logo-v {
-    color: #EF233C;
-}
-.navbar-brand .logo-a {
-    color: #ffffff;
-}
+/* Logo single gray color */
+.navbar-brand .logo-v,
+.navbar-brand .logo-a,
 .navbar-brand .logo-sairam {
-    color: rgba(255, 255, 255, 0.7);
+    color: #999999;
 }
 
 /* Logo shimmer animation */
 @keyframes logo-glow {
-    0%, 100% { text-shadow: 0 0 5px rgba(239, 35, 60, 0.0); }
-    50% { text-shadow: 0 0 15px rgba(239, 35, 60, 0.4), 0 0 30px rgba(239, 35, 60, 0.2); }
+    0%, 100% { text-shadow: 0 0 5px rgba(153, 153, 153, 0.0); }
+    50% { text-shadow: 0 0 15px rgba(153, 153, 153, 0.4), 0 0 30px rgba(153, 153, 153, 0.2); }
 }
 
 .logo-animated {
@@ -203,12 +199,8 @@ a:focus {
 }
 
 /* Sticky navbar logo colors */
-.navbar.nav-sticky .navbar-brand .logo-v {
-    color: #EF233C;
-}
-.navbar.nav-sticky .navbar-brand .logo-a {
-    color: #414141;
-}
+.navbar.nav-sticky .navbar-brand .logo-v,
+.navbar.nav-sticky .navbar-brand .logo-a,
 .navbar.nav-sticky .navbar-brand .logo-sairam {
     color: #999999;
 }
@@ -233,7 +225,7 @@ a:focus {
     }
 
     .navbar.nav-sticky .navbar-brand {
-        color: #EF233C;
+        color: #999999;
     }
 
     .navbar-light .navbar-nav .nav-link,
@@ -267,13 +259,11 @@ a:focus {
     }
 
     .navbar .navbar-brand {
-        color: #EF233C;
+        color: #999999;
     }
 
-    .navbar .navbar-brand .logo-a {
-        color: #414141;
-    }
-
+    .navbar .navbar-brand .logo-v,
+    .navbar .navbar-brand .logo-a,
     .navbar .navbar-brand .logo-sairam {
         color: #999999;
     }
