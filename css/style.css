@@ -181,6 +181,38 @@ a:focus {
     background: #f8f9fa;
 }
 
+/* Logo multi-color */
+.navbar-brand .logo-v {
+    color: #EF233C;
+}
+.navbar-brand .logo-a {
+    color: #ffffff;
+}
+.navbar-brand .logo-sairam {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Logo shimmer animation */
+@keyframes logo-glow {
+    0%, 100% { text-shadow: 0 0 5px rgba(239, 35, 60, 0.0); }
+    50% { text-shadow: 0 0 15px rgba(239, 35, 60, 0.4), 0 0 30px rgba(239, 35, 60, 0.2); }
+}
+
+.logo-animated {
+    animation: logo-glow 3s ease-in-out 1;
+}
+
+/* Sticky navbar logo colors */
+.navbar.nav-sticky .navbar-brand .logo-v {
+    color: #EF233C;
+}
+.navbar.nav-sticky .navbar-brand .logo-a {
+    color: #414141;
+}
+.navbar.nav-sticky .navbar-brand .logo-sairam {
+    color: #999999;
+}
+
 @media (min-width: 992px) {
     .navbar {
         position: absolute;
@@ -238,6 +270,14 @@ a:focus {
         color: #EF233C;
     }
 
+    .navbar .navbar-brand .logo-a {
+        color: #414141;
+    }
+
+    .navbar .navbar-brand .logo-sairam {
+        color: #999999;
+    }
+
     .navbar .navbar-nav {
         margin-top: 15px;
     }
@@ -258,7 +298,7 @@ a:focus {
 .hero {
     position: relative;
     width: 100%;
-    margin-bottom: 45px;
+    margin-bottom: 80px;
     padding: 120px 0 0 0;
     overflow: hidden;
     background: linear-gradient(rgba(239, 35, 60, .95), rgba(239, 35, 60, .95)), url(../img/hero-bg.jpg);
@@ -275,11 +315,6 @@ a:focus {
     position: relative;
     text-align: right;
     padding-right: 75px;
-}
-
-.hero .hero-image img {
-    max-width: 80%;
-    max-height: 80%;
 }
 
 .hero .hero-content {
@@ -350,6 +385,48 @@ a:focus {
 
 .hero .hero-btn .btn:first-child {
     margin-right: 10px;
+}
+
+/* Flip Card */
+.flip-card {
+    perspective: 1000px;
+    width: 80%;
+    max-width: 450px;
+    height: 450px;
+    margin-left: auto;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.flip-card-inner.flipped {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front img,
+.flip-card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 @media (max-width: 991.98px) {
@@ -508,7 +585,7 @@ a:focus {
 .about {
     position: relative;
     width: 100%;
-    margin: -45px 0 45px 0;
+    margin: 0 0 45px 0;
 }
 
 .about .col-lg-6 {
@@ -835,305 +912,6 @@ a:focus {
     .service .service-text p {
         font-size: 14px;
     }
-}
-
-
-/*******************************/
-/******** Portfolio CSS ********/
-/*******************************/
-.portfolio {
-    position: relative;
-    padding: 45px 0 15px 0;
-    overflow: hidden;
-}
-
-.portfolio #portfolio-filter {
-    padding: 0;
-    margin: -15px 0 25px 0;
-    list-style: none;
-    font-size: 0;
-    text-align: center;
-}
-
-.portfolio #portfolio-filter li {
-    cursor: pointer;
-    display: inline-block;
-    margin: 5px;
-    padding: 6px 12px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #ffffff;
-    background: #EF233C;
-    border: 2px solid transparent;
-    border-radius: 0;
-    box-shadow: inset 0 0 0 50px #EF233C;
-    transition: ease-out 0.3s;
-    -webkit-transition: ease-out 0.3s;
-    -moz-transition: ease-out 0.3s;
-}
-
-.portfolio #portfolio-filter li:hover,
-.portfolio #portfolio-filter li.filter-active {
-    color: #EF233C;
-    background: transparent;
-    box-shadow: inset 0 0 0 0 #EF233C;
-    border-color: #EF233C;
-}
-
-.portfolio .portfolio-item {
-    position: relative;
-}
-
-.portfolio .portfolio-wrap {
-    position: relative;
-    width: 100%;
-}
-
-.portfolio .portfolio-img {
-    position: relative;
-    overflow: hidden;
-}
-
-.portfolio .portfolio-img img {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: scale(1.1);
-    transition: .5s;
-}
-
-.portfolio .portfolio-item:hover img {
-    margin-left: 15px;
-}
-
-.portfolio .portfolio-text {
-    position: relative;
-    height: 60px;
-    width: calc(100% - 30px);
-    margin: -30px 15px 30px 15px;
-    display: flex;
-    align-items: center;
-    background: #ffffff;
-    box-shadow: 0 0 15px rgba(0, 0, 0, .12);
-}
-
-.portfolio .portfolio-text h3 {
-    width: calc(100% - 70px);
-    font-size: 18px;
-    font-weight: 600;
-    margin: 0 0 0 15px;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-.portfolio .portfolio-text a.btn {
-    width: 50px;
-    height: 50px;
-    padding: 0 0 2px 1px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 45px;
-    font-weight: 100;
-}
-
-.portfolio .portfolio-item:hover a.btn {
-    color: #EF233C;
-    background: transparent;
-    box-shadow: inset 0 0 0 0 #EF233C;
-    border-color: #EF233C;
-}
-
-
-/*******************************/
-/********* Banner CSS **********/
-/*******************************/
-.banner {
-    position: relative;
-    width: 100%;
-    margin: 45px 0;
-    padding: 90px 0;
-    background: #EF233C;
-    clear: both;
-}
-
-.banner .container {
-    max-width: 750px;
-    text-align: center;
-}
-
-.banner .section-header {
-    margin-bottom: 20px;
-}
-
-.banner .section-header p {
-    color: #414141;
-    background: transparent;
-}
-
-.banner .section-header p::after {
-    display: none;
-}
-
-.banner .section-header h2 {
-    color: #ffffff;
-}
-
-.banner .section-header h2 span {
-    color: #414141;
-    font-size: 50px;
-}
-
-.banner .banner-text p {
-    font-size: 18px;
-    color: #ffffff;
-}
-
-.banner .banner-text .btn {
-    margin-top: 15px;
-    color: #EF233C;
-    background: #ffffff;
-    box-shadow: inset 0 0 0 50px #ffffff;
-}
-
-.banner .banner-text .btn:hover {
-    color: #ffffff;
-    background: transparent;
-    box-shadow: inset 0 0 0 0 #ffffff;
-    border-color: #ffffff;
-}
-
-
-/*******************************/
-/********* Pricing CSS *********/
-/*******************************/
-.price {
-    position: relative;
-    width: 100%;
-    padding: 45px 0 15px 0;
-}
-
-.price .row {
-    padding: 0 15px;
-}
-
-.price .col-md-4 {
-    padding: 0 15px;
-}
-
-.price .price-item {
-    position: relative;
-    margin-bottom: 30px;
-    background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, .05);
-}
-
-.price .featured-item {
-    box-shadow: 0 0 30px rgba(0, 0, 0, .1);
-    z-index: 1;
-}
-
-.price .price-header,
-.price .price-body,
-.price .price-footer {
-    position: relative;
-    text-align: center;
-}
-
-.price .price-header {
-    padding: 30px 15px 20px 15px;
-    color: #414141;
-}
-
-.price .price-item.featured-item .price-header {
-    color: #EF233C;
-}
-
-.price .price-title h2 {
-    font-size: 22px;
-    font-weight: 400;
-    text-transform: uppercase;
-}
-
-.price .price-prices h2 {
-    font-size: 45px;
-    font-weight: 700;
-    margin-left: 10px;
-}
-
-.price .price-prices h3 {
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 1.4;
-    padding: 0 10px;
-}
-
-.price .price-prices h2 small {
-    position: absolute;
-    font-size: 18px;
-    font-weight: 400;
-    margin-top: 9px;
-    margin-left: -12px;
-}
-
-.price .price-prices h2 span {
-    margin-left: 1px;
-    font-size: 18px;
-    font-weight: 400;
-}
-
-.price .price-item.featured-item h2 {
-    color: #EF233C;
-}
-
-.price .price-body {
-    padding: 0 15px 20px 15px;
-}
-
-.price .price-description p {
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-.price .price-description ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.price .price-description ul li {
-    padding: 0 0 20px 0;
-}
-
-.price .price-item .price-action {
-    padding-bottom: 30px;
-}
-
-.price .price-item .price-action .btn {
-    color: #ffffff;
-    background: #414141;
-    box-shadow: inset 0 0 0 50px #414141;
-}
-
-.price .price-item .price-action .btn:hover {
-    color: #414141;
-    background: transparent;
-    box-shadow: inset 0 0 0 0 #414141;
-    border-color: #414141;
-}
-
-.price .price-item.featured-item .price-action .btn {
-    color: #ffffff;
-    background: #EF233C;
-    box-shadow: inset 0 0 0 50px #EF233C;
-}
-
-.price .price-item.featured-item .price-action .btn:hover {
-    color: #EF233C;
-    background: transparent;
-    box-shadow: inset 0 0 0 0 #EF233C;
-    border-color: #EF233C;
 }
 
 
@@ -1667,6 +1445,12 @@ a:focus {
 /*******************************/
 /***** Achievement Cards *******/
 /*******************************/
+.achievements-section {
+    position: relative;
+    width: 100%;
+    padding: 45px 0 15px 0;
+}
+
 .achievement-card {
     display: flex;
     align-items: flex-start;
@@ -1676,27 +1460,59 @@ a:focus {
     border-radius: 8px;
     border: 1px solid rgba(0, 0, 0, 0.05);
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease;
+    position: relative;
+    cursor: pointer;
 }
 
 .achievement-card:hover {
-    transform: translateY(-3px);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    z-index: 10;
 }
 
 .achievement-card .achievement-img {
     flex-shrink: 0;
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
     margin-right: 15px;
     border-radius: 8px;
-    overflow: hidden;
+    overflow: visible;
+    position: relative;
 }
 
 .achievement-card .achievement-img img {
-    width: 100%;
-    height: 100%;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
+    border-radius: 8px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+/* Hover-to-enlarge popup for achievement images */
+.achievement-card .achievement-img:hover img {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70vw;
+    max-width: 600px;
+    height: auto;
+    max-height: 80vh;
+    z-index: 1000;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.achievement-card .achievement-img:hover::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 999;
 }
 
 .achievement-card .achievement-content h3 {
@@ -1715,6 +1531,11 @@ a:focus {
 
 @media (max-width: 575.98px) {
     .achievement-card .achievement-img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .achievement-card .achievement-img img {
         width: 70px;
         height: 70px;
     }
@@ -1755,14 +1576,16 @@ a:focus {
 
 .gallery-item {
     border-radius: 8px;
-    overflow: hidden;
+    overflow: visible;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    cursor: pointer;
 }
 
 .gallery-item:hover {
-    transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    z-index: 10;
 }
 
 .gallery-item img {
@@ -1770,6 +1593,34 @@ a:focus {
     height: 220px;
     object-fit: cover;
     display: block;
+    border-radius: 8px 8px 0 0;
+    transition: all 0.4s ease;
+}
+
+/* Hover-to-enlarge popup for gallery images */
+.gallery-item:hover img {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70vw;
+    max-width: 700px;
+    height: auto;
+    max-height: 80vh;
+    z-index: 1000;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.gallery-item:hover::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 999;
 }
 
 .gallery-item .caption {
@@ -1779,4 +1630,246 @@ a:focus {
     text-align: center;
     background: #ffffff;
     color: #414141;
+}
+
+
+/*******************************/
+/***** Academia Teaser CSS *****/
+/*******************************/
+.academia-teaser {
+    position: relative;
+    width: 100%;
+    padding: 45px 0;
+    background: #f8f9fa;
+}
+
+.academia-card {
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.academia-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.academia-card-img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.academia-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.academia-card:hover .academia-card-img img {
+    transform: scale(1.05);
+}
+
+.academia-card-text {
+    padding: 20px;
+}
+
+.academia-card-text h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #414141;
+}
+
+.academia-card-text p {
+    font-size: 14px;
+    color: #797979;
+    margin: 0;
+    line-height: 1.5;
+}
+
+
+/*******************************/
+/***** Open Source CSS **********/
+/*******************************/
+.opensource {
+    position: relative;
+    width: 100%;
+    padding: 45px 0;
+}
+
+.pypi-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    padding: 25px 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pypi-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.pypi-card .pypi-icon {
+    margin-bottom: 15px;
+}
+
+.pypi-card .pypi-icon i {
+    font-size: 40px;
+    color: #EF233C;
+}
+
+.pypi-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #414141;
+}
+
+.pypi-card p {
+    font-size: 14px;
+    color: #797979;
+    margin: 0;
+}
+
+
+/*******************************/
+/***** Academia Page CSS *******/
+/*******************************/
+.academia-hero {
+    background: linear-gradient(rgba(239, 35, 60, .95), rgba(239, 35, 60, .95)), url(../img/hero-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 120px 0 80px;
+}
+
+.academia-hero h1 {
+    color: #ffffff;
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.academia-hero .academia-hero-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
+
+.academia-hero .btn {
+    color: #EF233C;
+    background: #ffffff;
+    box-shadow: inset 0 0 0 50px #ffffff;
+}
+
+.academia-hero .btn:hover {
+    color: #ffffff;
+    background: transparent;
+    box-shadow: inset 0 0 0 0 #ffffff;
+    border-color: #ffffff;
+}
+
+/* Topic cards */
+.academia-topics {
+    padding: 60px 0 30px;
+}
+
+.topic-card {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.topic-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+.topic-card .topic-icon {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(239, 35, 60, 0.1);
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+.topic-card .topic-icon i {
+    font-size: 22px;
+    color: #EF233C;
+}
+
+.topic-card .topic-text h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #414141;
+}
+
+.topic-card .topic-text p {
+    font-size: 14px;
+    color: #797979;
+    margin: 0;
+}
+
+/* Workshop experience */
+.workshop-experience {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+.workshop-list {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.workshop-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.06);
+}
+
+.workshop-item .workshop-hours {
+    min-width: 65px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #EF233C;
+    text-align: center;
+    padding-right: 15px;
+    border-right: 2px solid #EF233C;
+    margin-right: 15px;
+}
+
+.workshop-item .workshop-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #414141;
+}
+
+/* Event gallery */
+.event-gallery {
+    padding: 60px 0;
 }
