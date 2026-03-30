@@ -147,4 +147,29 @@
         portfolioIsotope.isotope({filter: $(this).data('filter')});
     });
 
+
+    // Click-to-expand lightbox for gallery and achievement images
+    $(document).on('click', '.gallery-item img, .achievement-card .achievement-img img', function (e) {
+        e.stopPropagation();
+        var src = $(this).attr('src');
+        var overlay = $('<div class="image-lightbox-overlay"><img src="' + src + '" alt="Expanded view"></div>');
+        $('body').append(overlay);
+        // Prevent body scroll
+        $('body').css('overflow', 'hidden');
+    });
+
+    // Close lightbox on click
+    $(document).on('click', '.image-lightbox-overlay', function () {
+        $(this).remove();
+        $('body').css('overflow', '');
+    });
+
+    // Close lightbox on Escape key
+    $(document).on('keydown', function (e) {
+        if (e.key === 'Escape') {
+            $('.image-lightbox-overlay').remove();
+            $('body').css('overflow', '');
+        }
+    });
+
 })(jQuery);

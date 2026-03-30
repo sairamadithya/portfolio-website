@@ -390,9 +390,9 @@ a:focus {
 /* Flip Card */
 .flip-card {
     perspective: 1000px;
-    width: 80%;
-    max-width: 450px;
-    height: 450px;
+    width: 90%;
+    max-width: 550px;
+    height: 550px;
     margin-left: auto;
 }
 
@@ -1137,28 +1137,31 @@ a:focus {
 .testimonial .owl-nav {
     position: absolute;
     top: 50%;
-    width: 100%;
+    width: calc(100% + 80px);
+    left: -40px;
     display: flex;
     justify-content: space-between;
     pointer-events: none;
     transform: translateY(-50%);
-    padding: 0 10px;
+    padding: 0;
 }
 
 .testimonial .owl-nav button {
     pointer-events: auto;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.3) !important;
+    width: 55px;
+    height: 55px;
+    background: rgba(255, 255, 255, 0.25) !important;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: .3s;
+    border: 2px solid rgba(255, 255, 255, 0.4);
 }
 
 .testimonial .owl-nav button:hover {
-    background: #ffffff !important;
+    background: rgba(255, 255, 255, 0.5) !important;
+    border-color: #ffffff;
 }
 
 .testimonial .owl-nav button span {
@@ -1166,12 +1169,12 @@ a:focus {
 }
 
 .testimonial .owl-nav button i {
-    font-size: 18px;
-    color: #ffffff;
+    font-size: 26px;
+    color: #cccccc;
 }
 
 .testimonial .owl-nav button:hover i {
-    color: #EF233C;
+    color: #ffffff;
 }
 
 
@@ -1489,31 +1492,7 @@ a:focus {
     cursor: pointer;
 }
 
-/* Hover-to-enlarge popup for achievement images */
-.achievement-card .achievement-img:hover img {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70vw;
-    max-width: 600px;
-    height: auto;
-    max-height: 80vh;
-    z-index: 1000;
-    border-radius: 12px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-}
-
-.achievement-card .achievement-img:hover::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.7);
-    z-index: 999;
-}
+/* Achievement images use click-to-expand (JS lightbox) */
 
 .achievement-card .achievement-content h3 {
     font-size: 17px;
@@ -1585,7 +1564,7 @@ a:focus {
 
 .gallery-item:hover {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    z-index: 10;
+    transform: translateY(-3px);
 }
 
 .gallery-item img {
@@ -1597,30 +1576,35 @@ a:focus {
     transition: all 0.4s ease;
 }
 
-/* Hover-to-enlarge popup for gallery images */
-.gallery-item:hover img {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70vw;
-    max-width: 700px;
-    height: auto;
-    max-height: 80vh;
-    z-index: 1000;
-    border-radius: 12px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-}
-
-.gallery-item:hover::before {
-    content: '';
+/* Image lightbox overlay (click-to-expand) */
+.image-lightbox-overlay {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0,0,0,0.7);
-    z-index: 999;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    animation: lightboxFadeIn 0.3s ease forwards;
+}
+
+@keyframes lightboxFadeIn {
+    to { opacity: 1; }
+}
+
+.image-lightbox-overlay img {
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    object-fit: contain;
 }
 
 .gallery-item .caption {
